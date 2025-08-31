@@ -21,11 +21,11 @@ export class ReservationsService {
     return this.reservationsRepository.find({});
   }
 
-  findOne(_id: number) {
+  findOne(_id: string) {
     return this.reservationsRepository.findOne({ _id });
   }
 
-  update(_id: number, updateReservationDto: UpdateReservationDto) {
+  update(_id: string, updateReservationDto: UpdateReservationDto) {
     return this.reservationsRepository.findOneAndUpdate(
       { _id },
       { $set: updateReservationDto },
