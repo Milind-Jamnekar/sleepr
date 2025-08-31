@@ -32,7 +32,7 @@ export class ReservationsService {
     );
   }
 
-  remove(_id: number) {
+  remove(_id: string) {
     return this.reservationsRepository.findOneAndDelete({ _id });
   }
 }

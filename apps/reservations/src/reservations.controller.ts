@@ -40,6 +40,6 @@ export class ReservationsController {
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.reservationsService.remove(+id);
+    return this.reservationsService.remove(id);
   }
 }
