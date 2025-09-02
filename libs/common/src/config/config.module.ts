@@ -10,6 +10,10 @@ import * as joi from 'joi';
     NestjsConfigModule.forRoot({
       validationSchema: joi.object({
         MONGODB_URL: joi.string(),
+        JWT_SECRET: joi.string(),
+        JWT_EXPIRES_IN: joi.number(),
+        RES_PORT: joi.number(),
+        AUTH_PORT: joi.number(),
       }),
     }),
   ],
