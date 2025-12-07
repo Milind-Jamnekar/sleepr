@@ -19,12 +19,14 @@ export abstract class AbstractRepository<TDocument extends AbstractDocument> {
     const document = await this.model
       .findOne(filterQuery)
       .lean<TDocument>(true);
+
     if (!document) {
       this.logger.warn(
         'Document not found with filterQuery: ' + JSON.stringify(filterQuery),
       );
       throw new NotFoundException('Document not found');
     }
+
     return document;
   }
 
@@ -54,12 +56,14 @@ export abstract class AbstractRepository<TDocument extends AbstractDocument> {
     const document = await this.model
       .findOneAndDelete(filterQuery)
       .lean<TDocument>(true);
+
     if (!document) {
       this.logger.warn(
         'Document not found with filterQuery: ' + JSON.stringify(filterQuery),
       );
       throw new NotFoundException('Document not found');
     }
+
     return document;
   }
 }
