@@ -1,19 +1,19 @@
-import { Module } from "@nestjs/common";
-import { ReservationsService } from "./reservations.service";
-import { ReservationsController } from "./reservations.controller";
-import { ReservationsRepository } from "./reservations.repository";
 import {
 	AUTH_SERVICE,
 	ConfigModule,
 	DatabaseModule,
 	LoggerModule,
 } from "@app/common";
+import { Module } from "@nestjs/common";
+import { ConfigService } from "@nestjs/config";
+import { ClientsModule, Transport } from "@nestjs/microservices";
 import {
 	ReservationDocument,
 	ReservationSchema,
 } from "./entities/reservation.schema";
-import { ClientsModule, Transport } from "@nestjs/microservices";
-import { ConfigService } from "@nestjs/config";
+import { ReservationsController } from "./reservations.controller";
+import { ReservationsRepository } from "./reservations.repository";
+import { ReservationsService } from "./reservations.service";
 
 @Module({
 	imports: [
